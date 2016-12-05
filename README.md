@@ -1,5 +1,5 @@
 # ADT Explorer
-  <img src="http://52.197.114.185:8080/images/screenshot.png">
+  <img src="http://http://explorer.thealadin.org/images/screenshot.png">
 # License
   The code in this branch is licensed under GPLv3 (see LICENSE file)
 
