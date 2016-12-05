@@ -1,0 +1,117 @@
+    <style>
+        body {margin:0px}
+
+        #mainP {margin:0px; padding:0px;}
+
+        #resTable {width:50%; min-width:600px;}
+
+		.infoBox {width:200px; margin:20px; display:inline-block;}
+		.myTable th {text-align:center; background:#eee;}
+		.myTable td.mee {
+			max-width:100px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			}
+    </style>
+
+	<div id="mainP">
+		<div ng-include="'html/header.html'"></div>
+
+		<div class="text-center">
+
+			<div class="panel panel-primary infoBox">
+				<div class="panel-heading text-center">
+					<h3 class="panel-title">Difficulty</h3>
+		  		</div>
+		  		<div class="panel-body text-center">
+					{{r.data.difficulty|number}}
+		  		</div>
+			</div>
+
+			<div class="panel panel-primary infoBox">
+			  	<div class="panel-heading">
+					<h3 class="panel-title text-center">Block Numer</h3>
+		  		</div>
+		  		<div class="panel-body text-center">
+					{{r.data.number|number}}
+		  		</div>
+			</div>
+
+			 <div class="panel panel-primary infoBox">
+              	<div class="panel-heading">
+                	<h3 class="panel-title text-center">Hash Rate</h3>
+                </div>
+                <div class="panel-body text-center">
+                    {{r.data.hashrate|number}}
+                </div>
+             </div>
+
+			 <div class="panel panel-primary infoBox">
+              	<div class="panel-heading">
+                	<h3 class="panel-title text-center">Tx / Hour</h3>
+                </div>
+                <div class="panel-body text-center">
+                -
+				</div>
+             </div>
+
+			 <div class="panel panel-primary infoBox">
+              	<div class="panel-heading">
+                	<h3 class="panel-title text-center">Uncle Rate</h3>
+                </div>
+                <div class="panel-body text-center">
+                -
+				</div>
+             </div>
+		</div>
+
+		<div class="text-center">
+			<div style="display:inline-block">
+				<h2>Recent Blocks</h2>
+				<table class="table table-hover myTable" style="width:500px; margin-right:20px;">
+				<thead>
+				<tr>
+					<th>Block No</th>
+					<th>Miner</th>
+					<th>Age</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr ng-repeat="d in r.data.blockInfo">
+					<td><a ng-click="blockSearch(d.blockInfo.number)" style="cursor:pointer;">{{d.blockInfo.number}}</a></td>
+					<td>{{d.blockInfo.miner}}</td>
+					<td title="{{d.regDate|date:'y-M-d H:m:s'}}">{{d.regDate|date:'mm:ss'}}</td>
+				</tr>
+				</tbody>
+				</table>
+			</div>
+			<div style="display:inline-block; border-left:1px solid #ccc;">
+                <h2>Recent Transactions</h2>
+                <table class="table table-hover myTable" style="width:600px; max-width:700px; overflow:hidden; margin-left:20px;">
+                <thead>
+				<tr>
+                    <th>TX Hash</th>
+                    <th>Block</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Amount</th>
+                    <th>Age</th>
+                </tr>
+				</thead>
+				<tbody>
+                <tr ng-repeat="d in r.data.txInfo">
+                    <td class="mee" title="{{d.txHash}}"><a ng-click="txSearch(d.txHash)" style="cursor:pointer;">{{d.txHash}}</a></td>
+                    <td class="mee">{{d.txInfo.blockNumber}}</td>
+                    <td class="mee">{{d.txInfo.from}}</td>
+                    <td class="mee">{{d.txInfo.to}}</td>
+                    <td class="text-right">{{d.txInfo.value/1000000000000000000|number}}</td>
+                    <td title="{{d.regDate|date:'y-M-d H:m:s'}}">{{d.regDate|date:'mm:ss'}}</td>
+                </tr>
+				</tbody>
+                </table>
+            </div>	
+		</div>
+
+	</div>
+	<div ng-include="'html/footer.html'"></div>

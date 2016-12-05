@@ -1,0 +1,33 @@
+    <style>
+        body {margin:0px}
+
+        #mainP {margin:0px; padding:0px;}
+
+        #resTable {width:50%; min-width:600px;}
+
+		.infoBox {width:200px; margin:20px; display:inline-block;}
+		.myTable th {text-align:center; background:#eee;}
+		.myTable td.mee {
+			max-width:100px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			}
+    </style>
+
+	<div id="mainP">
+
+		<div ng-include="'html/header.html'"></div>	
+		
+		<div class="text-left" style="width:900px; margin:50px;">
+
+			<h4> Transaction Hash : {{r.data.hash}}</h4>
+            <li ng-repeat="(key, value) in r.data">{{key}} : {{value}}</li>
+
+
+        </div>
+	
+		<div ng-include="'html/footer.html'"></div>
+
+	</div>
+

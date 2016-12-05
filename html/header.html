@@ -1,0 +1,16 @@
+	<div id="top_bar" ng-hidden="true" style="background:#ccc; height:60px; padding:5px; padding-top:10px;">
+
+            <div style="float:left; margin-left:20px;">
+                <font style="font-size:20pt; font-weight:bold;">ADT BLOCK EXPLORER</font>
+            </div>
+
+            <div style="float:left; margin-left:10px;">
+                <input type="text" id="txid" class="form-control" style="width:500px; max-width:500px; min-width:100px;" placeholder="Txid or Block number" ng-model="$parent.search_string" ng-trim="true">
+            </div>
+            <div style="float:left; margin-left:5px;">
+                <button class="btn btn-primary" ng-click="adtSearch()">Search</button>
+				<button class="btn btn-default" ng-show="$parent.txid || $parent.search_string" ng-click="back()">Back</button>
+            </div>
+            
+    </div>
+
