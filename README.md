@@ -1,6 +1,12 @@
-# ADT Explorer
+### ADT Explorer
   <img src="http://explorer.thealadin.org/images/screenshot.png">
-# License
+  
+### License
   The code in this branch is licensed under GPLv3 (see LICENSE file)
 
-Code in the MIT branch is under the MIT License
+  Code in the MIT branch is under the MIT License
+
+### Install 
+    git clone https://github.com/CTCDEVTEAM/explorer.git
+    
+    
