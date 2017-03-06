@@ -1,4 +1,3 @@
-//var app = angular.module("kiwi_event", ['ngRoute', 'ngCookies', 'angular-button-spinner']); //,'directives','ui.bootstrap']);
 var app = angular.module("adtExp", ['ngRoute']); //,'directives','ui.bootstrap']);
 
 	app.config(['$routeProvider', function($routeProvider) {
